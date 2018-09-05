@@ -5,12 +5,11 @@ const AnagramFinder = function (word) {
 AnagramFinder.prototype.findAnagrams = function (otherWords) {
   let result = otherWords.filter(word => word.length === this.word.length);
   result = result.filter(word => word !== this.word);
-  result = result.filter(word => {
+  return result.filter(word => {
     return word.toLowerCase().split('').every(letter => {
-      return this.word.toLowerCase().includes(letter);
+      return this.word.includes(letter);
     })
   })
-  return result;
 }
 
 module.exports = AnagramFinder;
