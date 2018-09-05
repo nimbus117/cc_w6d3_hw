@@ -15,9 +15,8 @@ const PangramFinder = function (phrase) {
 // }
 
 PangramFinder.prototype.isPangram = function () {
-  const phrase = this.phrase;
   return this.alphabet.every(letter => {
-    return phrase.includes(letter);
+    return this.phrase.includes(letter);
   })
 }
 
