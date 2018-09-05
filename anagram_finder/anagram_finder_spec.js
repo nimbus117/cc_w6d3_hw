@@ -36,4 +36,9 @@ describe('AnagramFinder', function () {
     const anagramFinder = new AnagramFinder('word');
     assert.deepStrictEqual(anagramFinder.findAnagrams(['']), []);
   });
+
+  it('should not detect a word as it\'s own anagram, regardless of case', function () {
+    const anagramFinder = new AnagramFinder('javascript');
+    assert.deepStrictEqual(anagramFinder.findAnagrams(['jaVasCript']), []);
+  });
 });
