@@ -1,7 +1,9 @@
 const UpperCaser = function (words) {
+  this.words = words;
 }
 
-UpperCaser.prototype.toUpperCase = function () {
+UpperCaser.prototype.toUpperCase = function() {
+  return this.words.map(p => p.toUpperCase());
 
 }
 
